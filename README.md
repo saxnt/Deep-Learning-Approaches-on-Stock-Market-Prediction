@@ -1,152 +1,168 @@
 # Deep-Learning-Approaches-on-Stock-Market-Prediction
 
 A comprehensive study comparing deep learning and traditional machine learning models for NIFTY 50 stock market prediction.
+
 📊 Project Overview
 This project explores various machine learning and deep learning approaches to predict stock market trends using the NIFTY 50 dataset. We compare the performance of traditional models (Random Forest, SVM) with advanced deep learning architectures (LSTM, Bi-LSTM, Bi-RNN) for financial time series forecasting.
-👥 Team Members
 
+👥 Team Members
 Garima Roy (UG/02/BTCSEDA/2023/002)
+
 Saikat Das (UG/02/BTCSEAIML/2023/074)
+
 Md. Zayed Ali (UG/02/BTCSEDA/2023/001)
+
 Sk. Nahid Faiyaz (UG/02/BTCSEDA/2023/005)
+
 Digant Mishra (UG/02/BTCSECSF/2023/016)
 
 Project Supervisor: Ms. Debasree Mitra
 Institution: School of Engineering & Technology, ADAMAS University, Kolkata
-🎯 Objectives
 
+🎯 Objectives
 Evaluate deep learning models (LSTM, Bi-LSTM, Bi-RNN) for stock price prediction
+
 Compare performance with traditional ML models (Random Forest, SVM)
+
 Analyze hybrid approaches combining deep learning with classical methods
+
 Provide insights into the practical value of AI for financial forecasting
 
 🗂️ Dataset
 NIFTY 50 Historical Stock Data
 
 Source: India's National Stock Exchange (NSE)
+
 Features: Open, High, Low, Close, Volume
+
 Coverage: Top 50 companies across multiple sectors
-Time Period: Multi-year historical data (2019-2024)
+
+Time Period: 2019–2024
 
 🔧 Methodology
 Data Preprocessing
-
 Missing Value Handling: Forward-fill techniques
-Normalization: Min-Max scaling to [0,1] range
+
+Normalization: Min-Max scaling to [0, 1]
+
 Feature Engineering: Moving averages, RSI, MACD
+
 Sequence Formatting: 60-day rolling windows for RNN models
 
 Models Implemented
 Deep Learning Models
+LSTM: Captures long-term dependencies; handles vanishing gradient
 
-LSTM (Long Short-Term Memory)
+Bi-LSTM: Bidirectional processing for better temporal recognition
 
-Captures long-term dependencies in time series
-Handles vanishing gradient problem
+Bi-RNN: Forward and backward sequence learning
 
-
-Bi-LSTM (Bidirectional LSTM)
-
-Processes sequences in both directions
-Enhanced temporal pattern recognition
-
-
-Bi-RNN (Bidirectional RNN)
-
-Forward and backward sequence processing
-Improved context understanding
-
-
-CNN-LSTM Hybrid
-
-Combines CNN local pattern recognition with LSTM sequence modeling
-
-
+CNN-LSTM Hybrid: CNN for local patterns + LSTM for sequential modeling
 
 Traditional ML Models
+Random Forest: Ensemble learning, reduces overfitting
 
-Random Forest
-
-Ensemble learning with multiple decision trees
-Reduces overfitting through averaging
-
-
-Support Vector Machine (SVM)
-
-Optimized with RandomizedSearchCV
-Hyperparameter tuning for optimal performance
-
-
+SVM: Tuned with RandomizedSearchCV
 
 Hybrid Approaches
-
 Bi-RNN + Random Forest
+
 Bi-LSTM + Random Forest
+
 LSTM + SVM
+
 RandomizedSearchCV + SVM
 
 📈 Results
 Performance Comparison
-ModelMAEMSERMSEBi-RNN with SVM0.12290.12290.1229Bi-RNN with Random Forest0.03270.03270.0327Bi-LSTM with Random Forest443.6411552.9398552.9398Randomized Search CV (SVM)5.87640.06.4785LSTM with SVM328.0172414.9087414.9087LSTM with CNN0.01650.0005—
+Model	MAE	MSE	RMSE
+Bi-RNN + SVM	0.1229	0.1229	0.1229
+Bi-RNN + Random Forest	0.0327	0.0327	0.0327
+Bi-LSTM + Random Forest	443.64	1552.93	1552.93
+Randomized SearchCV (SVM)	5.8764	0.06	6.4785
+LSTM + SVM	328.01	7414.90	7414.90
+CNN-LSTM	0.0165	0.0005	—
+
 Key Findings
 ✅ Deep Learning Advantages:
 
-Superior at capturing non-linear temporal patterns
-Better long-term dependency modeling
-Reduced need for manual feature engineering
+Captures non-linear patterns better
+
+Models long-term dependencies
+
+Reduces manual feature engineering
 
 ✅ Best Performing Models:
 
-CNN-LSTM Hybrid: Lowest overall error rates
-Bi-RNN with Random Forest: Excellent balance of accuracy and stability
+CNN-LSTM Hybrid: Lowest overall error
+
+Bi-RNN + Random Forest: Balance of accuracy & stability
 
 ✅ Traditional ML Insights:
 
-Competitive performance with proper preprocessing
-Faster training times
-Good interpretability
+Good performance with solid preprocessing
+
+Faster training
+
+Easy to interpret
 
 🔮 Future Scope
 Enhanced Data Integration
+News sentiment analysis
 
-News Sentiment Analysis: Market-related news impact
-Macroeconomic Indicators: Interest rates, inflation, GDP
-Global Market Correlations: S&P 500, Dow Jones integration
+Macroeconomic indicators (Interest rates, GDP, etc.)
+
+Global market correlations (e.g., S&P 500)
 
 Advanced Architectures
+Attention mechanisms
 
-Attention Mechanisms: Focus on relevant sequence parts
-Transformer Models: BERT/GPT-based approaches
-Ensemble Methods: Combined model predictions
+Transformers (BERT, GPT)
+
+Ensemble methods
 
 Real-World Applications
+Real-time predictions
 
-Real-Time Predictions: Live market condition analysis
-Multi-Asset Portfolios: Cross-asset correlation modeling
-Risk Management: Dynamic portfolio optimization
+Multi-asset portfolio modeling
+
+Risk management systems
 
 🛠️ Technologies Used
-
 Programming: Python
+
 Deep Learning: TensorFlow/Keras, PyTorch
+
 Machine Learning: Scikit-learn
+
 Data Processing: Pandas, NumPy
+
 Visualization: Matplotlib, Seaborn
+
 Optimization: GridSearchCV, RandomizedSearchCV
 
 📊 Evaluation Metrics
+MAE: Mean Absolute Error
 
-MAE (Mean Absolute Error): Average absolute prediction errors
-MSE (Mean Squared Error): Average squared differences
-RMSE (Root Mean Squared Error): Standard deviation of residuals
-R² Score: Proportion of variance explained
+MSE: Mean Squared Error
+
+RMSE: Root Mean Squared Error
+
+R² Score: Explained variance
 
 🚀 Getting Started
 Prerequisites
-bashpip install tensorflow pandas numpy scikit-learn matplotlib seaborn
+bash
+Copy
+Edit
+pip install tensorflow pandas numpy scikit-learn matplotlib seaborn
 Basic Usage
-python# Load and preprocess data
+python
+Copy
+Edit
+# Load and preprocess data
 from data_preprocessing import load_nifty_data, preprocess_data
+
 data = load_nifty_data('nifty50_data.csv')
 processed_data = preprocess_data(data)
 
@@ -157,17 +173,21 @@ model.fit(processed_data)
 
 # Make predictions
 predictions = model.predict(test_data)
-
 📚 Key References
 Hochreiter, S., & Schmidhuber, J. (1997). Long short-term memory. Neural Computation.
+
 Fischer, T., & Krauss, C. (2018). Deep learning with LSTM networks for financial market predictions. European Journal of Operational Research.
-Bao, W., Yue, J., & Rao, Y. (2017). A deep learning framework for financial time series using stacked autoencoders and LSTM. PloS One.
+
+Bao, W., Yue, J., & Rao, Y. (2017). A deep learning framework for financial time series using stacked autoencoders and LSTM. PLoS One.
 
 🤝 Contributing
 We welcome contributions! Please feel free to submit issues, feature requests, or pull requests.
-📄 License
-This project is licensed under the MIT License - see the LICENSE file for details.
-📞 Contact
-For questions or collaboration opportunities, please reach out to any of the team members or our supervisor Ms. Debasree Mitra at ADAMAS University.
 
-Note: This project was completed as part of the B.Tech Computer Science & Engineering curriculum at ADAMAS University, Kolkata (Jan 2025 - May 2025).
+📄 License
+This project is licensed under the MIT License – see the LICENSE file for details.
+
+📞 Contact
+For questions or collaboration opportunities, reach out to any team member or our supervisor Ms. Debasree Mitra at ADAMAS University, Kolkata.
+
+Note: This project was completed as part of the B.Tech Computer Science & Engineering curriculum at ADAMAS University, Kolkata (Jan 2025 – May 2025).
+
