@@ -157,8 +157,8 @@ model.fit(processed_data)
 
 # Make predictions
 predictions = model.predict(test_data)
-📚 Key References
 
+📚 Key References
 Hochreiter, S., & Schmidhuber, J. (1997). Long short-term memory. Neural Computation.
 Fischer, T., & Krauss, C. (2018). Deep learning with LSTM networks for financial market predictions. European Journal of Operational Research.
 Bao, W., Yue, J., & Rao, Y. (2017). A deep learning framework for financial time series using stacked autoencoders and LSTM. PloS One.
